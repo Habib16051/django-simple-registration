@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Your Website</title>
+</head>
+<body>
+    <h1>Welcome to Your Website</h1>
+
+    {% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}!</p>
+    <p>You are now logged in.</p>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <p>
+      You are not logged in. Please <a href="{% url 'login' %}">login</a> or
+      <a href="{% url 'register' %}">register</a>.
+    </p>
+    {% endif %}
+</body>
+</html>
