@@ -33,4 +33,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('home') 
+    return redirect('/success') 
+
+def logout_success(request):
+    return render(request, 'success.html')
